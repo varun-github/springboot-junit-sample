@@ -12,7 +12,7 @@ pipeline {
                 bat("E:/Varun/apps/apache-maven/apache-maven-3.6.3/bin/mvn -Dmaven.test.failure.ignore=true -s E:/Varun/apps/apache-maven/apache-maven-3.6.3/conf/settings.xml test")
             }
             post {
-                always {
+                success {
                     junit 'target/surefire-reports/TEST*.xml'
                 }
             }
