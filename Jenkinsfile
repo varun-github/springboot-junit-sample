@@ -15,7 +15,7 @@ pipeline {
     post {
         always {
             script{
-                utils.withCloudStudio: do: "emitTelemetry"
+                utils.withCloudStudio do: "emitTelemetry"
             }
         }
 }
