@@ -1,6 +1,6 @@
 {
     "aws_region": "",
-    "service_name": "springboot-sample",
+    "service_name": "sb-junit-sample",
     "cluster_name": "",
     "image_name": "",
     "secrets": [],

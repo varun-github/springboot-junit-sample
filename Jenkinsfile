@@ -10,25 +10,14 @@ pipeline {
                     utils.withMaven do: "package", withArgFile: ".jenkins/stage.build.env.json"
                 }
             }
-            post {
-                success {
-                    echo "Successful!"
-                }
+        }
+    } 
+    post {
+        always {
+            script{
+                utils.withCloudStudio: do: "emitTelemetry"
             }
         }
-        // stage('Build Docker') {
-        //     steps {
-        //         script {
-        //             utils.withDocker do: "build", withArgFile: ".jenkins/stage.build.docker.env.json"
-        //         }
-        //     }
-        // }
-        // stage('Deploy To ECS') {
-        //     steps {
-        //         script {
-        //             utils.withTerraform do: "fargateDeploy", withArgFile: ".jenkins/stage.terraform.fargate_deploy_vars.json"
-        //         }
-        //     }
-        // }
-    }
+}
+
 }
