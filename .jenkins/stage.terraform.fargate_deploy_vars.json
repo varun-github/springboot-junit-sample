@@ -21,6 +21,5 @@
     "lb_listener_arn": "abcd",
     "listener_routing_rule_pattern": [
         "/welcome"
-    ],
-    "cluster_name": ""
+    ]
 }
